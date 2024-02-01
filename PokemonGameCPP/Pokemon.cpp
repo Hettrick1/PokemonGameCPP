@@ -7,9 +7,9 @@ Pokemon::Pokemon(std::string pName, int pLevel, std::string pDescription, int pH
 	health = pHealth;
 	type = pType;
 }
-Pokemon::~Pokemon(){}
+Pokemon::~Pokemon() {}
 
-std::string Pokemon::GetName() { return name; }
+std::string Pokemon::GetName() const { return name; }
 int Pokemon::GetLevel() { return level; }
 std::string Pokemon::GetDescription() { return description; }
 int Pokemon::GetHealth() { return health; }

@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Pokemon.h"
+
+
+class Pokemon;
 
 class Dresseur
 {
@@ -12,10 +14,11 @@ private:
 	std::vector<Pokemon> team;
 
 public:
-	Dresseur(std::string name){}
-	~Dresseur(){}
+	Dresseur(std::string name);
+	~Dresseur();
 	std::string GetName();
 	void AddPokemon(const Pokemon& pokemon);
 	void ShowTeam();
 };
+
 

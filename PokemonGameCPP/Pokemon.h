@@ -14,11 +14,12 @@ private:
 public:
 	Pokemon(std::string name, int level, std::string description, int health, std::string type);
 	~Pokemon();
-	std::string GetName();
+	std::string GetName() const;
 	int GetLevel();
 	std::string GetDescription();
 	int GetHealth();
 	std::string GetType();
 };
+
 
 
