@@ -1,10 +1,7 @@
 ﻿  Dresseur.cpp
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\Dresseur.cpp(4,11): error C2084: la fonction 'Dresseur::Dresseur(std::string)' a déjà un corps
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\Dresseur.h(15,2): message : voir la définition précédente de '{ctor}'
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\Dresseur.cpp(7,12): error C2084: la fonction 'Dresseur::~Dresseur(void)' a déjà un corps
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\Dresseur.h(16,3): message : voir la définition précédente de '{dtor}'
+  Pokemon.cpp
   PokemonGameCPP.cpp
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(36,20): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(42,20): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(48,20): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
   Génération de code en cours...
+  PokemonGameCPP.vcxproj -> E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe
+  'pwsh.exe' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.
