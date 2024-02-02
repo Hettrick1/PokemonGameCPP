@@ -61,18 +61,12 @@ Pokemon NewPokemon(const std::vector<std::string>& names, const std::vector<std:
     std::string name = ChooseName(names, gen);
     std::string description;
     std::string type;
-    if (name == "Bulbizarre") {
-        description = descriptions[0];
-        type = types[0];
-    }
-    else if (name == "Pikachu")
-    {
-        description = descriptions[1];
-        type = types[1];
-    }
-    else if (name == "Salameche") {
-        description = descriptions[2];
-        type = types[2];
+    for (int i = 0; i < names.size(); i++) {
+        if (name == names[i]) 
+        {
+            description = descriptions[i];
+            type = types[i];
+        }
     }
     int level = ChooseLevel(gen);
     int health = ChooseHealth(gen);
