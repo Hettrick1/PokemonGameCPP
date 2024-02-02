@@ -8,8 +8,7 @@
 
 Pokemon NewPokemon(const std::vector<std::string>& names, const std::vector<std::string>& descriptions, const std::vector<std::string>& types, std::mt19937& gen);
 std::string ChooseName(const std::vector<std::string>& names, std::mt19937& gen);
-int ChooseLevel(std::mt19937& gen);
-int ChooseHealth(std::mt19937& gen);
+int ChooseInt(std::mt19937& gen, int mint, int max);
 
 int main()
 {
@@ -43,18 +42,11 @@ std::string ChooseName(const std::vector<std::string>& names, std::mt19937& gen)
     return names[randomIndex];
 }
 
-int ChooseLevel(std::mt19937& gen) {
+int ChooseInt(std::mt19937& gen, int min, int max) {
 
-    std::uniform_int_distribution<int> dist(1, 21);
+    std::uniform_int_distribution<int> dist(min, max);
     int randomLevel = dist(gen);
     return randomLevel;
-}
-
-int ChooseHealth(std::mt19937& gen) {
-    ;
-    std::uniform_int_distribution<int> dist(50, 101);
-    int randomHps = dist(gen);
-    return randomHps;
 }
 
 Pokemon NewPokemon(const std::vector<std::string>& names, const std::vector<std::string>& descriptions, const std::vector<std::string>& types, std::mt19937& gen) {
@@ -68,8 +60,8 @@ Pokemon NewPokemon(const std::vector<std::string>& names, const std::vector<std:
             type = types[i];
         }
     }
-    int level = ChooseLevel(gen);
-    int health = ChooseHealth(gen);
+    int level = ChooseInt(gen, 1, 21);
+    int health = ChooseInt(gen, 20, 51);
 
     return Pokemon(name, level, description, health, type);
 }
