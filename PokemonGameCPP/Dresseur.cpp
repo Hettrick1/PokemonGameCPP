@@ -11,6 +11,6 @@ void Dresseur::AddPokemon(const Pokemon& pokemon) { team.push_back(pokemon); }
 void Dresseur::ShowTeam() {
 	std::cout << "Dresseur : " << name << "\nTeam : \n";
 	for (const Pokemon& pokemon : team) {
-		std::cout << pokemon.GetName() << " " << pokemon.GetLevel() << " " << pokemon.GetType() <<"\n";
+		std::cout << pokemon.GetName() << " " << pokemon.GetLevel() <<"\n";
 	}
 }
