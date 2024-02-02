@@ -130,10 +130,12 @@
     <ClCompile Include="Dresseur.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="PokemonGameCPP.cpp" />
+    <ClCompile Include="Random.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dresseur.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="Random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
