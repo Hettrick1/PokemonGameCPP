@@ -24,6 +24,7 @@ public:
 	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase);
 	~Dresseur();
 	std::string GetName();
+	std::vector<Pokemon> GetTeam();
 	void AddPokemon(const Pokemon& pokemon);
 	void ShowTeam();
 	void Introduce();

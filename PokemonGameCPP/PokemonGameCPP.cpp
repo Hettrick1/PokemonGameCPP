@@ -23,7 +23,11 @@ int main()
         ash.AddPokemon(newPokemon);
     }
 
-    ash.ShowTeam();
+    Abilities a1 = Abilities("hello", 10, PokeType::ELECTRIC);
+
+    std::cout << "dégats : " << ash.GetTeam()[1].GetName() << "\n";
+    
+    std::cout << "dégats : " << ash.GetTeam()[0].calculateDamage(a1, ash.GetTeam()[1]);
 
     return 0;
 }

@@ -16,6 +16,7 @@ private:
 	std::string description;
 	int health;
 	std::vector<Abilities> abilities;
+	bool incapacited;
 public:
 	Pokemon(std::string name, PokeType type, int level, std::string description, int health);
 	~Pokemon();
@@ -24,6 +25,9 @@ public:
 	int GetLevel() const;
 	std::string GetDescription() const;
 	int GetHealth() const;
+	bool GetIncapacited();
+	int calculateDamage(Abilities& ability, Pokemon& defender);
+	void TakeDamages(int damage);
 };
 
 

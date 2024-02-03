@@ -22,6 +22,7 @@ Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchP
 Dresseur::~Dresseur() {}
 std::string Dresseur::GetName() { return name; }
 void Dresseur::AddPokemon(const Pokemon& pokemon) { team.push_back(pokemon); }
+std::vector<Pokemon> Dresseur::GetTeam() { return team; }
 void Dresseur::ShowTeam() {
 	std::cout << "Dresseur : " << name << "\nTeam : \n";
 	for (const Pokemon& pokemon : team) {
