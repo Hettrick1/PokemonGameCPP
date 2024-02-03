@@ -9,13 +9,14 @@ class Abilities
 {
 private:
 	std::string name;
-	int damages;
+	float damages;
 	PokeType type;
 
+
 public:
-	Abilities(std::string name, int damages, PokeType type);
+	Abilities(std::string name, float damages, PokeType type);
 	~Abilities();
-	int GetDamages();
+	float GetDamages();
 	PokeType GetAbilityType();
 	std::string GetAbilityName();
 };

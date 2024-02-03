@@ -1,6 +1,6 @@
 #include "Abilities.h"
 
-Abilities::Abilities(std::string aName, int aDamages, PokeType aType) {
+Abilities::Abilities(std::string aName, float aDamages, PokeType aType) {
 	name = aName;
 	damages = aDamages;
 	type = aType;
@@ -8,7 +8,7 @@ Abilities::Abilities(std::string aName, int aDamages, PokeType aType) {
 
 Abilities::~Abilities(){}
 
-int Abilities::GetDamages() {
+float Abilities::GetDamages() {
 	return damages;
 }
 

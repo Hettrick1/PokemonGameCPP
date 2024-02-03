@@ -14,20 +14,20 @@ private:
 	PokeType type;
 	int level;
 	std::string description;
-	int health;
+	float health;
 	std::vector<Abilities> abilities;
 	bool incapacited;
 public:
-	Pokemon(std::string name, PokeType type, int level, std::string description, int health);
+	Pokemon(std::string name, PokeType type, int level, std::string description, float health);
 	~Pokemon();
 	std::string GetName() const;
 	PokeType GetType();
 	int GetLevel() const;
 	std::string GetDescription() const;
-	int GetHealth() const;
+	float GetHealth() const;
 	bool GetIncapacited();
-	int calculateDamage(Abilities& ability, Pokemon& defender);
-	void TakeDamages(int damage);
+	float calculateDamage(Abilities& ability, Pokemon& defender);
+	void TakeDamages(float damage);
 };
 
 
