@@ -8,8 +8,16 @@ Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchP
 	lastName = dLastName;
 	catchPhrase = dCatchPhrase;
 	money = dMoney;
-	lifePoints = dLifePoints;
+	lifePoints = dLifePoints; // ca me sert a rien ce machin là en fait
 	pokeballs = dPokeballs;
+}
+Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase) {
+	name = dName;
+	lastName = dLastName;
+	catchPhrase = dCatchPhrase;
+	money = 100;
+	lifePoints = 100;
+	pokeballs = 10;
 }
 Dresseur::~Dresseur() {}
 std::string Dresseur::GetName() { return name; }
