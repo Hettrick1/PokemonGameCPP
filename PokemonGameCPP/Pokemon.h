@@ -3,19 +3,21 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <vector>
 #include "Poketype.h"
+#include "Abilities.h"
 
 class Pokemon
 {
 private:
 	std::string name;
-	std::map<std::string, PokeType> pokemonInfo;
+	PokeType type;
 	int level;
 	std::string description;
 	int health;
-	std::string type;
+	std::vector<Abilities> abilities;
 public:
-	Pokemon(std::string name, std::map<std::string, PokeType> pokemonInfo, int level, std::string description, int health);
+	Pokemon(std::string name, PokeType type, int level, std::string description, int health);
 	~Pokemon();
 	std::string GetName() const;
 	PokeType GetType();

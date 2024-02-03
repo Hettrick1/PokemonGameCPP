@@ -5,26 +5,21 @@
 #include "Dresseur.h"
 #include "Pokemon.h"
 #include "Random.h"
+#include "PokemonData.h"
 
-Pokemon NewPokemon(std::map<std::string, std::string>& namesAndTypes, const std::vector<std::string>& descriptions);
-std::string ChooseName(std::map<std::string, std::string>& namesAndTypes);
+Pokemon NewPokemon(std::vector<std::string>& Allnames);
+std::string ChooseName(std::vector<std::string>& Allnames);
 int ChooseInt(int mint, int max);
 
 int main()
 {
-    std::map<std::string, std::string> namesAndTypes = {
-    { "Bulbizarre", "Herbe" },
-    { "Pikachu", "Electricite" },
-    { "Salameche", "Feu" } };
-    std::vector<std::string> pokemonDescr = { "Bulbizarre est une créature courtaude et vaguement reptilienne qui se déplace à quatre pattes et possède un corps bleu-vert clair avec des taches bleu-vert plus foncées.",
-    "Décrit comme une souris, Pikachu évoque un petit rongeur d'une quarantaine de centimètres pour six kilogrammes, avec un corps rond, de courtes pattes et une queue aussi longue que son corps.",
-    "La flamme qui brûle au bout de sa queue indique l'humeur de ce Pokémon. Elle vacille lorsque Salamèche est content." };
+    std::vector<std::string> names = GetAllPokemonNames();
 
-    Dresseur ash = Dresseur("Ash");
+    Dresseur ash = Dresseur("Ash", "alfn", "afkj", 100, 100, 10);
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 6; i++)
     {
-        Pokemon newPokemon = NewPokemon(namesAndTypes, pokemonDescr);
+        Pokemon newPokemon = NewPokemon(names);
         ash.AddPokemon(newPokemon);
     }
 
@@ -33,10 +28,10 @@ int main()
     return 0;
 }
 
-std::string ChooseName(std::map<std::string, std::string>& namesAndTypes) {
+std::string ChooseName(std::vector<std::string>& Allnames) {
     Random random;
-    int randomIndex = random.RangeInt(0, static_cast<int>(namesAndTypes.size() - 1));
-    return " ";
+    int randomIndex = random.RangeInt(0, static_cast<int>(Allnames.size() - 1));
+    return Allnames[randomIndex];
 }
 
 
@@ -46,16 +41,12 @@ int ChooseInt(int min, int max) {
     return randomLevel;
 }
 
-Pokemon NewPokemon(std::map<std::string, std::string>& namesAndTypes, const std::vector<std::string>& descriptions) {
-    std::string name = ChooseName(namesAndTypes);
-    std::string description;
-    std::string type;
-    std::map<std::string, PokeType> nameAndType;
-
-    type = namesAndTypes[name];
-
+Pokemon NewPokemon(std::vector<std::string>& AllNames) {
+    std::string name = ChooseName(AllNames);
+    std::string description = GetPokemonDescription(name);
+    PokeType type = GetPokemonType(name);
     int level = ChooseInt(1, 21);
     int health = ChooseInt(20, 51);
 
-    return Pokemon(name, nameAndType, level, description, health);
+    return Pokemon(name, type, level, description, health);
 }
