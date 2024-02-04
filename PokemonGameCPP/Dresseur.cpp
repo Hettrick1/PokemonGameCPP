@@ -46,7 +46,24 @@ void Dresseur::EarnPokeballs(int count) {
 	std::cout << "Earned " << count << " pokeballs. Total pokeballs: " << pokeballs << "\n";
 }
 
-void Dresseur::ChangeCurrentPokemon(int i){
-	//afpmaf
+void Dresseur::ChangeCurrentPokemon(){
+	std::vector<Pokemon> pokemonsAvailable;
+	pokemonsAvailable.clear();
+	int answer = 0;
+	for (Pokemon& pokemon : team) {
+		if (!pokemon.GetIncapacited()) {
+			pokemonsAvailable.push_back(pokemon);
+		}
+	}
+	std::cout << "\nVous avez tous ces Pokemons de disponibles pour la bataille, lequel voulez vous choisir ?\n";
+	size_t pokemonsAvailableSize = pokemonsAvailable.size();
+	for (int i = 0; i < pokemonsAvailableSize; i++) {
+		std::cout << i + 1 << ". " << pokemonsAvailable[i].GetName() << "\n";
+	}
+	do {
+		std::cin >> answer;
+	} while (answer < 0 || answer > pokemonsAvailableSize);
 
+	currentPokemon = pokemonsAvailable[answer - 1];
+	std::cout << "Vous avez choisi : " << pokemonsAvailable[answer - 1].GetName() << ".";
 }

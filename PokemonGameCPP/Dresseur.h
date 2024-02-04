@@ -33,7 +33,7 @@ public:
 	void UsePokemonAbility(Pokemon& attackingPokemon, Pokemon& targetPokemon, Abilities& ability);
 	void EarnMoney(int amount);
 	void EarnPokeballs(int count);
-	void ChangeCurrentPokemon(int i);
+	void ChangeCurrentPokemon();
 };
 
 

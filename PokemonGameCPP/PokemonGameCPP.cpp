@@ -29,6 +29,9 @@ int main()
     
     std::cout << "degats : " << ash.GetTeam()[0].calculateDamage(a1, ash.GetTeam()[1]);
 
+    ash.ChangeCurrentPokemon();
+    ash.ChangeCurrentPokemon();
+
     return 0;
 }
 
