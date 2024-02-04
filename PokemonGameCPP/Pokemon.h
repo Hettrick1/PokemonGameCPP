@@ -18,6 +18,7 @@ private:
 	std::vector<Abilities> abilities;
 	bool incapacited;
 public:
+	Pokemon();
 	Pokemon(std::string name, PokeType type, int level, std::string description, float health);
 	~Pokemon();
 	std::string GetName() const;

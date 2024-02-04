@@ -2,6 +2,14 @@
 #include "Abilities.h"
 #include "PokemonData.h"
 
+
+Pokemon::Pokemon() {
+	name = "Salamèche";
+	type = PokeType::FIRE;
+	description = "La flamme sur sa queue represente l energie vitale de Salameche. Quand il est vigoureux, elle brule plus fort.";
+	health = 100;
+	incapacited = false;
+}
 Pokemon::Pokemon(std::string pName, PokeType pType, int pLevel, std::string pDescription, float pHealth) {
 	name = pName;
 	type = pType;

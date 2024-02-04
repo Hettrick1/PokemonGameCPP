@@ -1,7 +1,4 @@
-﻿  Abilities.cpp
-  Dresseur.cpp
-  Pokemon.cpp
-  PokemonData.cpp
+﻿  Dresseur.cpp
   PokemonGameCPP.cpp
 E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(55,52): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   Génération de code en cours...

@@ -36,12 +36,17 @@ void Dresseur::Introduce() {
 void Dresseur::UsePokemonAbility(Pokemon& attackingPokemon, Pokemon& targetPokemon, Abilities& ability) {
 	//faire des dégats au targetPokemon
 }
-void Dresseur::earnMoney(int amount) {
+void Dresseur::EarnMoney(int amount) {
 	money += amount;
 	std::cout << "Earned " << amount << " money. Total money: " << money << "\n";
 }
 
-void Dresseur::earnPokeballs(int count) {
+void Dresseur::EarnPokeballs(int count) {
 	pokeballs += count;
 	std::cout << "Earned " << count << " pokeballs. Total pokeballs: " << pokeballs << "\n";
+}
+
+void Dresseur::ChangeCurrentPokemon(int i){
+	//afpmaf
+
 }

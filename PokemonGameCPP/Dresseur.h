@@ -5,8 +5,9 @@
 #include <vector>
 
 #include "Abilities.h"
+#include "Pokemon.h"
 
-class Pokemon;
+//class Pokemon;
 
 class Dresseur
 {
@@ -18,6 +19,7 @@ private:
 	int lifePoints;
 	int pokeballs;
 	std::vector<Pokemon> team;
+	Pokemon currentPokemon;
 
 public:
 	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase, int dMoney, int dLifePoints, int dPokeballs);
@@ -29,8 +31,9 @@ public:
 	void ShowTeam();
 	void Introduce();
 	void UsePokemonAbility(Pokemon& attackingPokemon, Pokemon& targetPokemon, Abilities& ability);
-	void earnMoney(int amount);
-	void earnPokeballs(int count);
+	void EarnMoney(int amount);
+	void EarnPokeballs(int count);
+	void ChangeCurrentPokemon(int i);
 };
 
 
