@@ -27,8 +27,9 @@ public:
 	std::string GetDescription() const;
 	float GetHealth() const;
 	bool GetIncapacited();
-	float calculateDamage(Abilities& ability, Pokemon& defender);
+	float CalculateDamage(Abilities& ability, Pokemon& defender);
 	void TakeDamages(float damage);
+	void LearnAbilities(std::vector<Abilities>& abilitiesAvailable);
 };
 
 

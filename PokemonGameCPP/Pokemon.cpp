@@ -27,17 +27,23 @@ float Pokemon::GetHealth() const { return health; }
 PokeType Pokemon::GetType() { return type;}
 bool Pokemon::GetIncapacited() { return incapacited; }
 
-float Pokemon::calculateDamage(Abilities& ability, Pokemon& defender) {
+float Pokemon::CalculateDamage(Abilities& ability, Pokemon& defender) {
 
-	PokeType attackType = ability.GetAbilityType();
+	if (ability.CanUse()) {
+		ability.SetCurrentUses();
+		PokeType attackType = ability.GetAbilityType();
 
-	PokeType defenderType = defender.GetType();
-	
-	float resistance = GetResistance(static_cast<int>(attackType), static_cast<int>(defenderType));
+		PokeType defenderType = defender.GetType();
 
-	float damage = ability.GetDamages() * resistance;
+		float resistance = GetResistance(static_cast<int>(attackType), static_cast<int>(defenderType));
 
-	return damage;
+		float damage = ability.GetDamages() * resistance;
+
+		return damage;
+	}
+	else {
+		std::cout << "la capacité " << ability.GetAbilityName() << " ne peut plus être utilisée. \n";
+	}
 }
 
 void Pokemon::TakeDamages(float damages) {
@@ -46,5 +52,11 @@ void Pokemon::TakeDamages(float damages) {
 	}
 	else {
 		incapacited = true;
+	}
+}
+
+void Pokemon::LearnAbilities(std::vector<Abilities>& abilitiesAvailable) {
+	for (int i = 0; i < abilitiesAvailable.size(); i++) {
+		std::cout << i + 1 << ". " << abilitiesAvailable[i].GetAbilityName() << " - " << abilitiesAvailable[i].GetPrice() << " pièces.\n";
 	}
 }

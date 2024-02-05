@@ -23,11 +23,11 @@ int main()
         ash.AddPokemon(newPokemon);
     }
 
-    Abilities a1 = Abilities("hello", 10, PokeType::ELECTRIC);
+    Abilities a1 = Abilities("hello", 10, PokeType::ELECTRIC, 100);
 
     std::cout << ash.GetTeam()[1].GetName() << "\n";
     
-    std::cout << "degats : " << ash.GetTeam()[0].calculateDamage(a1, ash.GetTeam()[1]);
+    std::cout << "degats : " << ash.GetTeam()[0].CalculateDamage(a1, ash.GetTeam()[1]);
 
     ash.ChangeCurrentPokemon();
     ash.ChangeCurrentPokemon();

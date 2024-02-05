@@ -1,7 +1,6 @@
-﻿  Dresseur.cpp
-  PokemonGameCPP.cpp
+﻿  PokemonGameCPP.cpp
 E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(58,52): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  Génération de code en cours...
+  LINK : E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   PokemonGameCPP.vcxproj -> E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.
