@@ -11,6 +11,7 @@ Pokemon::Pokemon() {
 	type = PokeType::FIRE;
 	description = "La flamme sur sa queue represente l energie vitale de Salameche. Quand il est vigoureux, elle brule plus fort.";
 	health = 100;
+	maxHealth = 100;
 	incapacited = false;
 }
 Pokemon::Pokemon(std::string pName, PokeType pType, int pLevel, std::string pDescription, float pHealth) {
@@ -19,6 +20,7 @@ Pokemon::Pokemon(std::string pName, PokeType pType, int pLevel, std::string pDes
 	level = pLevel;
 	description = pDescription;
 	health = pHealth;
+	maxHealth = pHealth;
 	incapacited = false;
 }
 Pokemon::~Pokemon() {}
@@ -82,4 +84,11 @@ void Pokemon::GoOutOfPokeball() {
 }
 void Pokemon::GoInAPokeball() {
 	std::cout << name << " est entre dans sa pokeball.\n";
+}
+
+void Pokemon::Rest() {
+	health = maxHealth;
+	for (Abilities& ability : abilities) {
+		ability.ResetUses();
+	}
 }

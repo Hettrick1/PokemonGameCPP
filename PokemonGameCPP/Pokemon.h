@@ -15,6 +15,7 @@ private:
 	PokeType type;
 	int level;
 	std::string description;
+	float maxHealth;
 	float health;
 	std::vector<Abilities> abilities;
 	bool incapacited;
@@ -33,6 +34,7 @@ public:
 	void LearnAbilities(std::vector<Abilities>& abilitiesAvailable);
 	void GoOutOfPokeball();
 	void GoInAPokeball();
+	void Rest();
 };
 
 
