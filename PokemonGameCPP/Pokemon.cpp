@@ -1,6 +1,9 @@
 #include "Pokemon.h"
+#include "Dresseur.h"
 #include "Abilities.h"
 #include "PokemonData.h"
+
+#include <algorithm>
 
 
 Pokemon::Pokemon() {
@@ -55,8 +58,28 @@ void Pokemon::TakeDamages(float damages) {
 	}
 }
 
-void Pokemon::LearnAbilities(std::vector<Abilities>& abilitiesAvailable) {
-	for (int i = 0; i < abilitiesAvailable.size(); i++) {
-		std::cout << i + 1 << ". " << abilitiesAvailable[i].GetAbilityName() << " - " << abilitiesAvailable[i].GetPrice() << " pièces.\n";
+void Pokemon::LearnAbilities(std::vector<Abilities>& allAbilities) {
+	int answer;
+	size_t abilitiesAvailableSize = allAbilities.size();
+
+	if (abilities.size() < 5) {
+		std::cout << "\nVotre pokemon peut apprendre ces abilites, laquelle voulez-vous ?\n";
+		for (int i = 0; i < abilitiesAvailableSize; i++) {
+			std::cout << i + 1 << ". " << allAbilities[i].GetAbilityName() << ".\n";
+		}
+		do {
+			std::cin >> answer;
+		} while (answer < 0 || answer > abilitiesAvailableSize);
+		abilities.push_back(allAbilities[answer - 1]);
+		std::cout << "Votre pokemon " << name << " vient d'apprendre l'abilité : " << allAbilities[answer - 1].GetAbilityName() << ".\n";	
 	}
+	else {
+		std::cout << "Votre pokemon " << name << " ne peut plus apprendre d'abilites.\n";
+	}
+}
+void Pokemon::GoOutOfPokeball() {
+	std::cout << name << " est sorti de sa pokeball.\n";
+}
+void Pokemon::GoInAPokeball() {
+	std::cout << name << " est entre dans sa pokeball.\n";
 }

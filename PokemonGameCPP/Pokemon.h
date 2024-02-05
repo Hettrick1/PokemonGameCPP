@@ -1,11 +1,12 @@
 #pragma once
 
+#include "Poketype.h"
+#include "Abilities.h"
+
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
-#include "Poketype.h"
-#include "Abilities.h"
 
 class Pokemon
 {
@@ -30,6 +31,8 @@ public:
 	float CalculateDamage(Abilities& ability, Pokemon& defender);
 	void TakeDamages(float damage);
 	void LearnAbilities(std::vector<Abilities>& abilitiesAvailable);
+	void GoOutOfPokeball();
+	void GoInAPokeball();
 };
 
 

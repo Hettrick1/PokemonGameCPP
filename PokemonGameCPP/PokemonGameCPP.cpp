@@ -13,6 +13,7 @@ int ChooseInt(int mint, int max);
 
 int main()
 {
+    std::vector<Abilities> abilitiesAvailable;
     std::vector<std::string> names = GetAllPokemonNames();
 
     Dresseur ash = Dresseur("Ash", "alfn", "afkj", 100, 100, 10);
@@ -24,13 +25,15 @@ int main()
     }
 
     Abilities a1 = Abilities("hello", 10, PokeType::ELECTRIC, 100);
+    abilitiesAvailable.push_back(a1);
 
     std::cout << ash.GetTeam()[1].GetName() << "\n";
     
     std::cout << "degats : " << ash.GetTeam()[0].CalculateDamage(a1, ash.GetTeam()[1]);
 
     ash.ChangeCurrentPokemon();
-    ash.ChangeCurrentPokemon();
+
+    ash.GetCurrentPokemon().LearnAbilities(abilitiesAvailable);
 
     return 0;
 }

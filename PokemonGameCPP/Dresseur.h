@@ -7,8 +7,6 @@
 #include "Abilities.h"
 #include "Pokemon.h"
 
-//class Pokemon;
-
 class Dresseur
 {
 private:
@@ -34,6 +32,8 @@ public:
 	void EarnMoney(int amount);
 	void EarnPokeballs(int count);
 	void ChangeCurrentPokemon();
+	Pokemon GetCurrentPokemon();
+	int GetMoney();
 };
 
 

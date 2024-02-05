@@ -1,6 +1,7 @@
-﻿  PokemonGameCPP.cpp
-E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(58,52): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  LINK : E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-  PokemonGameCPP.vcxproj -> E:\02.Prog\Git\Nouveau dossier\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe
-  'pwsh.exe' n'est pas reconnu en tant que commande interne
-  ou externe, un programme exécutable ou un fichier de commandes.
+﻿  Dresseur.cpp
+  Pokemon.cpp
+  PokemonGameCPP.cpp
+C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\PokemonGameCPP\PokemonGameCPP.cpp(61,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\PokemonGameCPP\Pokemon.cpp(50): warning C4715: 'Pokemon::CalculateDamage': not all control paths return a value
+  PokemonGameCPP.vcxproj -> C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe

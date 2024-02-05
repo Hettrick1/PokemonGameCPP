@@ -1,5 +1,5 @@
-#include "Pokemon.h"
 #include "Dresseur.h"
+#include "Pokemon.h"
 
 #include <iostream>
 
@@ -8,7 +8,7 @@ Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchP
 	lastName = dLastName;
 	catchPhrase = dCatchPhrase;
 	money = dMoney;
-	lifePoints = dLifePoints; // ca me sert a rien ce machin là en fait
+	lifePoints = dLifePoints;
 	pokeballs = dPokeballs;
 }
 Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase) {
@@ -21,7 +21,9 @@ Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchP
 }
 Dresseur::~Dresseur() {}
 std::string Dresseur::GetName() { return name; }
-void Dresseur::AddPokemon(const Pokemon& pokemon) { team.push_back(pokemon); }
+void Dresseur::AddPokemon(const Pokemon& pokemon) {
+	team.push_back(pokemon); 
+}
 std::vector<Pokemon> Dresseur::GetTeam() { return team; }
 void Dresseur::ShowTeam() {
 	std::cout << "Dresseur : " << name << "\nTeam : \n";
@@ -47,6 +49,9 @@ void Dresseur::EarnPokeballs(int count) {
 }
 
 void Dresseur::ChangeCurrentPokemon(){
+
+	currentPokemon.GoInAPokeball();
+
 	std::vector<Pokemon> pokemonsAvailable;
 	pokemonsAvailable.clear();
 	int answer = 0;
@@ -65,5 +70,13 @@ void Dresseur::ChangeCurrentPokemon(){
 	} while (answer < 0 || answer > pokemonsAvailableSize);
 
 	currentPokemon = pokemonsAvailable[answer - 1];
-	std::cout << "Vous avez choisi : " << pokemonsAvailable[answer - 1].GetName() << ".";
+	std::cout << "Vous avez choisi : " << currentPokemon.GetName() << ".";
+}
+
+Pokemon Dresseur::GetCurrentPokemon() {
+	return currentPokemon;
+}
+
+int Dresseur::GetMoney() {
+	return money;
 }
