@@ -80,3 +80,6 @@ Pokemon Dresseur::GetCurrentPokemon() {
 int Dresseur::GetMoney() {
 	return money;
 }
+Pokemon Dresseur::SetCurrentPokemon(Pokemon& pokemon) {
+	currentPokemon = pokemon;
+}
