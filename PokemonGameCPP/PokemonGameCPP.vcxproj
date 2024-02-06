@@ -130,6 +130,7 @@
     <ClCompile Include="Abilities.cpp" />
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="Dresseur.cpp" />
+    <ClCompile Include="Initialisation.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="PokemonData.cpp" />
     <ClCompile Include="PokemonGameCPP.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Abilities.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Dresseur.h" />
+    <ClInclude Include="Initialisation.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PokemonData.h" />
     <ClInclude Include="Poketype.h" />

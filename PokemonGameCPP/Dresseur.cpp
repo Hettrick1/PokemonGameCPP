@@ -49,9 +49,6 @@ void Dresseur::EarnPokeballs(int count) {
 }
 
 void Dresseur::ChangeCurrentPokemon(){
-
-	currentPokemon.GoInAPokeball();
-
 	std::vector<Pokemon> pokemonsAvailable;
 	pokemonsAvailable.clear();
 	int answer = 0;
@@ -82,4 +79,5 @@ int Dresseur::GetMoney() {
 }
 Pokemon Dresseur::SetCurrentPokemon(Pokemon& pokemon) {
 	currentPokemon = pokemon;
+	return currentPokemon;
 }
