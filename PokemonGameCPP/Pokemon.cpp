@@ -71,7 +71,7 @@ void Pokemon::LearnAbilities(std::vector<Abilities>& allAbilities) {
 		}
 		do {
 			std::cin >> answer;
-		} while (answer < 0 || answer > abilitiesAvailableSize);
+		} while (answer <= 0 || answer > abilitiesAvailableSize);
 		abilities.push_back(allAbilities[answer - 1]);
 		std::cout << "Votre pokemon " << name << " vient d'apprendre l'abilité : " << allAbilities[answer - 1].GetAbilityName() << ".\n";	
 	}

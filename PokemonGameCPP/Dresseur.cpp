@@ -3,6 +3,15 @@
 
 #include <iostream>
 
+Dresseur::Dresseur() {
+	name = "Player";
+	lastName = "Player";
+	catchPhrase = "CatchPhrase";
+	money = 100;
+	lifePoints = 100;
+	pokeballs = 10;
+}
+
 Dresseur::Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase, int dMoney, int dLifePoints, int dPokeballs) {
 	name = dName;
 	lastName = dLastName;
@@ -64,7 +73,7 @@ void Dresseur::ChangeCurrentPokemon(){
 	}
 	do {
 		std::cin >> answer;
-	} while (answer < 0 || answer > pokemonsAvailableSize);
+	} while (answer <= 0 || answer > pokemonsAvailableSize);
 
 	currentPokemon = pokemonsAvailable[answer - 1];
 	std::cout << "Vous avez choisi : " << currentPokemon.GetName() << ".";

@@ -9,6 +9,7 @@ class Initialisation
 {
 private:
 	std::vector<Dresseur> AllDresseurs;
+	Dresseur player;
 	std::vector<Abilities> abilitiesAvailable;
 public:
 	Initialisation();
@@ -18,5 +19,7 @@ public:
 	Pokemon NewPokemon(std::vector<std::string>& AllNames);
 	Dresseur GetDresseur(int dresseurIndex);
 	std::vector<Abilities>& GetAbilitiesAvailable();
+	void CreatePlayer();
+	Dresseur& GetPlayer();
 };
 

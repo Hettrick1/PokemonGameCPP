@@ -1,5 +1,6 @@
 #include "Initialisation.h"
 #include "Random.h"
+ 
 #include "Abilities.h"
 #include "Pokemon.h"
 #include "PokemonData.h"
@@ -21,6 +22,8 @@ Initialisation::Initialisation() {
 
     Abilities newAbility = Abilities("hello", 10, PokeType::ELECTRIC, 100);
     abilitiesAvailable.push_back(newAbility);
+
+    CreatePlayer();
 }
 Initialisation::~Initialisation() {}
 
@@ -29,7 +32,6 @@ std::string Initialisation::ChooseName(std::vector<std::string>& Allnames) {
     int randomIndex = random.RangeInt(0, static_cast<int>(Allnames.size() - 1));
     return Allnames[randomIndex];
 }
-
 
 int Initialisation::ChooseInt(int min, int max) {
     Random random;
@@ -46,9 +48,48 @@ Pokemon Initialisation::NewPokemon(std::vector<std::string>& AllNames) {
 
     return Pokemon(name, type, level, description, static_cast<float>(health));
 }
+
 Dresseur Initialisation::GetDresseur(int dresseurIndex) {
     return AllDresseurs[dresseurIndex];
 }
+
 std::vector<Abilities>& Initialisation::GetAbilitiesAvailable(){
     return abilitiesAvailable;
+}
+
+Dresseur& Initialisation::GetPlayer() {
+    return player;
+}
+
+void Initialisation::CreatePlayer() {
+    std::string playerFirstName, playerLastName, playerCatchphrase;
+    int answer = 0;
+    Pokemon firstPokemon;
+
+    std::cout << "Bonjour jeune dresseur, quel est ton prénom ?\n";
+    std::cin >> playerFirstName;
+    std::cout << "Ton nom de famille ?\n";
+    std::cin >> playerLastName;
+    std::cout << "Qu'elle est ta catchphrase ?\n";
+    std::cin >> playerCatchphrase;
+    std::cout << "Tu as le choix entre trois pokemons : \n1. Bulbizarre - Herbe\n2. Carapuce - Eau\n3. Salamèche - Feu\n";
+    do {
+        std::cout << "Avec lequel veux - tu commencer ? \n";
+        std::cin >> answer;
+    } while (answer <= 0 || answer > 3);
+    switch (answer)
+    {
+    case 1:
+        firstPokemon = Pokemon("Bulbizarre", PokeType::GRASS, 1, "Il a une etrange graine plantee sur son dos. Elle grandit avec lui depuis sa naissance.", 100);
+        break;
+    case 2 :
+        firstPokemon = Pokemon("Carapuce", PokeType::WATER, 1, "La flamme sur sa queue represente l energie vitale de Salameche. Quand il est vigoureux, elle brule plus fort.", 100);
+        break;
+    case 3 :
+        firstPokemon = Pokemon("Salamèche", PokeType::FIRE, 1, "Il se refugie dans sa carapace et replique en eclaboussant l ennemi a la premiere occasion.", 100);
+        break;
+    }
+    Dresseur defaultPlayer = Dresseur(playerFirstName, playerLastName, playerCatchphrase);
+    player = defaultPlayer;
+    player.AddPokemon(firstPokemon);
 }

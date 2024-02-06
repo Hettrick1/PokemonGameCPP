@@ -17,9 +17,9 @@ int main()
     
     std::cout << "dégats : " << init.GetDresseur(0).GetTeam()[0].CalculateDamage(init.GetAbilitiesAvailable()[0], init.GetDresseur(0).GetTeam()[1]);
 
-    init.GetDresseur(0).ChangeCurrentPokemon();
+    init.GetPlayer().ChangeCurrentPokemon();
 
-    init.GetDresseur(0).GetCurrentPokemon().LearnAbilities(init.GetAbilitiesAvailable());
+    init.GetPlayer().GetCurrentPokemon().LearnAbilities(init.GetAbilitiesAvailable());
 
     return 0;
 }

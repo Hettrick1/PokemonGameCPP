@@ -20,6 +20,7 @@ private:
 	Pokemon currentPokemon;
 
 public:
+	Dresseur();
 	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase, int dMoney, int dLifePoints, int dPokeballs);
 	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase);
 	~Dresseur();

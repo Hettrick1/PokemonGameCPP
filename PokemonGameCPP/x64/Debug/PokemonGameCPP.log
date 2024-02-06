@@ -1,7 +1,2 @@
 ﻿  Initialisation.cpp
-  Pokemon.cpp
-  PokemonData.cpp
-  PokemonGameCPP.cpp
-  Generating Code...
-C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\PokemonGameCPP\Pokemon.cpp(52): warning C4715: 'Pokemon::CalculateDamage': not all control paths return a value
   PokemonGameCPP.vcxproj -> C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe
