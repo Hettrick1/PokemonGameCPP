@@ -53,10 +53,11 @@ float Pokemon::CalculateDamage(Abilities& ability, Pokemon& defender) {
 
 void Pokemon::TakeDamages(float damages) {
 	if (health > damages) {
-		health = 0;
+		health -= damages;
 	}
 	else {
 		incapacited = true;
+		health = 0;
 	}
 }
 

@@ -17,7 +17,6 @@ Initialisation::Initialisation() {
         Pokemon newPokemon = NewPokemon(names);
         dresseur.AddPokemon(newPokemon);
     }
-
     AllDresseurs.push_back(dresseur);
 
     Abilities newAbility = Abilities("hello", 10, PokeType::ELECTRIC, 100);
@@ -35,8 +34,8 @@ std::string Initialisation::ChooseName(std::vector<std::string>& Allnames) {
 
 int Initialisation::ChooseInt(int min, int max) {
     Random random;
-    int randomLevel = random.RangeInt(min, max);
-    return randomLevel;
+    int randomInt = random.RangeInt(min, max);
+    return randomInt;
 }
 
 Pokemon Initialisation::NewPokemon(std::vector<std::string>& AllNames) {
