@@ -49,7 +49,7 @@ Pokemon Initialisation::NewPokemon(std::vector<std::string>& AllNames) {
     return Pokemon(name, type, level, description, static_cast<float>(health));
 }
 
-Dresseur Initialisation::GetDresseur(int dresseurIndex) {
+Dresseur& Initialisation::GetDresseur(int dresseurIndex) {
     return AllDresseurs[dresseurIndex];
 }
 
@@ -63,7 +63,7 @@ Dresseur& Initialisation::GetPlayer() {
 
 void Initialisation::CreatePlayer() {
     std::string playerFirstName, playerLastName, playerCatchphrase;
-    int answer = 0;
+    int answer;
     Pokemon firstPokemon;
 
     std::cout << "Bonjour jeune dresseur, quel est ton prénom ?\n";
@@ -92,4 +92,5 @@ void Initialisation::CreatePlayer() {
     Dresseur defaultPlayer = Dresseur(playerFirstName, playerLastName, playerCatchphrase);
     player = defaultPlayer;
     player.AddPokemon(firstPokemon);
+    std::cout << "Vous avez choisi : " << firstPokemon.GetName() << "\n";
 }

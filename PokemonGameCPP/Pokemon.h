@@ -35,6 +35,8 @@ public:
 	void GoOutOfPokeball();
 	void GoInAPokeball();
 	void Rest();
+	std::vector<Abilities>& GetAbilities();
+	void ChoseAbilities(std::vector<Abilities>& abilities, Pokemon& defender);
 };
 
 

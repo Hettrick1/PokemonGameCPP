@@ -33,7 +33,7 @@ public:
 	void EarnMoney(int amount);
 	void EarnPokeballs(int count);
 	void ChangeCurrentPokemon();
-	Pokemon GetCurrentPokemon();
+	Pokemon& GetCurrentPokemon();
 	int GetMoney();
 	Pokemon SetCurrentPokemon(Pokemon& pokemon);
 };

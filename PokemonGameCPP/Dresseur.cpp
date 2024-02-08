@@ -76,10 +76,10 @@ void Dresseur::ChangeCurrentPokemon(){
 	} while (answer <= 0 || answer > pokemonsAvailableSize);
 
 	currentPokemon = pokemonsAvailable[answer - 1];
-	std::cout << "Vous avez choisi : " << currentPokemon.GetName() << ".";
+	std::cout << "Vous avez choisi : " << currentPokemon.GetName() << ".\n";
 }
 
-Pokemon Dresseur::GetCurrentPokemon() {
+Pokemon& Dresseur::GetCurrentPokemon() {
 	return currentPokemon;
 }
 

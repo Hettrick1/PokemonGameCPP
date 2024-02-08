@@ -92,3 +92,30 @@ void Pokemon::Rest() {
 		ability.ResetUses();
 	}
 }
+
+std::vector<Abilities>& Pokemon::GetAbilities() {
+	return abilities;
+}
+
+
+void Pokemon::ChoseAbilities(std::vector<Abilities>& abilities, Pokemon& defender) {
+	int answer;
+	for (int i = 0; i < abilities.size(); i++) {
+		std::cout << i + 1 << ". " << abilities[i].GetAbilityName() << ".\n";
+	}
+	do {
+		std::cin >> answer;
+	} while (answer <= 0 || answer > abilities.size());
+	int damages = CalculateDamage(abilities[answer - 1], defender);
+	defender.TakeDamages(damages);
+	std::cout << "L'abilite " << abilities[answer - 1].GetAbilityName() << " a ete utilisee. Les degats infliges s'elevent a : " << damages << ". \n";
+
+	if (defender.GetIncapacited()) {
+		std::cout << "Le pokemon adverse est assome.\n";
+	}
+	else
+	{
+		std::cout << "Il reste " << defender.GetHealth() << " pvs au pokemon adverse.\n";
+	}
+
+}

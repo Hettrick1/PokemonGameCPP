@@ -17,7 +17,7 @@ public:
 	std::string ChooseName(std::vector<std::string>& Allnames);
 	int ChooseInt(int min, int max);
 	Pokemon NewPokemon(std::vector<std::string>& AllNames);
-	Dresseur GetDresseur(int dresseurIndex);
+	Dresseur& GetDresseur(int dresseurIndex);
 	std::vector<Abilities>& GetAbilitiesAvailable();
 	void CreatePlayer();
 	Dresseur& GetPlayer();
