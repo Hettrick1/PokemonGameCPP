@@ -88,7 +88,7 @@ void Initialisation::CreatePlayer() {
         firstPokemon = Pokemon("Salamèche", PokeType::FIRE, 1, "Il se refugie dans sa carapace et replique en eclaboussant l ennemi a la premiere occasion.", 100);
         break;
     }
-    Dresseur defaultPlayer = Dresseur(playerFirstName, playerLastName, playerCatchphrase);
+    Dresseur defaultPlayer (playerFirstName, playerLastName, playerCatchphrase, firstPokemon);
     player = defaultPlayer;
     player.AddPokemon(firstPokemon);
     std::cout << "Vous avez choisi : " << firstPokemon.GetName() << "\n";

@@ -17,25 +17,25 @@ private:
 	int lifePoints;
 	int pokeballs;
 	std::vector<Pokemon> team;
-	Pokemon currentPokemon;
+	Pokemon* currentPokemon;
 
 public:
 	Dresseur();
 	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase, int dMoney, int dLifePoints, int dPokeballs);
-	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase);
+	Dresseur(std::string dName, std::string dLastName, std::string dCatchPhrase, Pokemon& dFirstPokemon);
 	~Dresseur();
 	std::string GetName();
-	std::vector<Pokemon> GetTeam();
-	void AddPokemon(const Pokemon& pokemon);
+	std::vector<Pokemon>& GetTeam();
+	void AddPokemon(Pokemon& pokemon);
 	void ShowTeam();
 	void Introduce();
-	void UsePokemonAbility(Pokemon& attackingPokemon, Pokemon& targetPokemon, Abilities& ability);
 	void EarnMoney(int amount);
 	void EarnPokeballs(int count);
 	void ChangeCurrentPokemon();
-	Pokemon& GetCurrentPokemon();
+	Pokemon* GetCurrentPokemon();
 	int GetMoney();
-	Pokemon SetCurrentPokemon(Pokemon& pokemon);
+	void SetCurrentPokemon(Pokemon& pokemon);
+	void SetCurrentPokemon(int pokemon);
 };
 
 

@@ -1,2 +1,3 @@
-﻿  PokemonGameCPP.cpp
+﻿  Battle.cpp
+C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\PokemonGameCPP\Battle.cpp(23,11): warning C4101: 'temp': unreferenced local variable
   PokemonGameCPP.vcxproj -> C:\Users\evann.jacquot\Documents\GitHub\PokemonGameCPP\x64\Debug\PokemonGameCPP.exe

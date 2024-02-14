@@ -16,7 +16,7 @@ int main()
 
     init.GetPlayer().ChangeCurrentPokemon();
 
-    init.GetPlayer().GetCurrentPokemon().LearnAbilities(init.GetAbilitiesAvailable());
+    init.GetPlayer().GetCurrentPokemon()->LearnAbilities(init.GetAbilitiesAvailable());
 
     Battle battle = Battle(init.GetPlayer(), init.GetDresseur(0));
     do {
@@ -24,7 +24,7 @@ int main()
         for (Pokemon pokemons : init.GetDresseur(0).GetTeam()) {
 
         }
-    } while (init.GetDresseur(0).GetTeam()[init.GetDresseur(0).GetTeam().size()].GetIncapacited());
+    } while (!init.GetDresseur(0).GetTeam()[init.GetDresseur(0).GetTeam().size()-1].GetIncapacited());
     
 
     return 0;
