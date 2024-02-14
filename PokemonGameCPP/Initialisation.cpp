@@ -12,7 +12,7 @@ Initialisation::Initialisation() {
 
     Dresseur dresseur = Dresseur("Ash", "alfn", "afkj", 100, 100, 10);
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 2; i++)
     {
         Pokemon newPokemon = NewPokemon(names);
         dresseur.AddPokemon(newPokemon);

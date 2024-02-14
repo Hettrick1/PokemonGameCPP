@@ -48,6 +48,7 @@ float Pokemon::CalculateDamage(Abilities& ability, Pokemon& defender) {
 	}
 	else {
 		std::cout << "la capacité " << ability.GetAbilityName() << " ne peut plus être utilisée. \n";
+		return 0;
 	}
 }
 
@@ -108,15 +109,8 @@ void Pokemon::ChoseAbilities(std::vector<Abilities>& abilities, Pokemon& defende
 		std::cin >> answer;
 	} while (answer <= 0 || answer > abilities.size());
 	int damages = CalculateDamage(abilities[answer - 1], defender);
-	defender.TakeDamages(damages);
-	std::cout << "L'abilite " << abilities[answer - 1].GetAbilityName() << " a ete utilisee. Les degats infliges s'elevent a : " << damages << ". \n";
-
-	if (defender.GetIncapacited()) {
-		std::cout << "Le pokemon adverse est assome.\n";
+	if (damages > 0) {
+		defender.TakeDamages(damages);
+		std::cout << "L'abilite " << abilities[answer - 1].GetAbilityName() << " a ete utilisee. Les degats infliges s'elevent a : " << damages << ". \n";
 	}
-	else
-	{
-		std::cout << "Il reste " << defender.GetHealth() << " pvs au pokemon adverse.\n";
-	}
-
 }
